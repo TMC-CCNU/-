@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>社区治理中社会资本的形成机制分析框架</title>
+    <!-- 加载Plotly库 -->
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+    <style>
+        body {
+            font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        #framework-chart {
+            height: 85vh;
+            min-height: 700px;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            gap: 15px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 10px;
+            font-size: 14px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            border-radius: 3px;
+        }
+        .source {
+            text-align: right;
+            margin-top: 15px;
+            color: #95a5a6;
+            font-size: 13px;
+            font-style: italic;
+        }
+        @media (max-width: 768px) {
+            #framework-chart {
+                height: 70vh;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>社区治理中社会资本的形成机制：一个整合性分析框架</h1>
+        <div class="subtitle">基于结构性机会、行为策略与网络演化的动态过程</div>
+        
+        <div id="framework-chart"></div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #2c7bb6;"></div>
+                <span>结构性机会供给</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #fdae61;"></div>
+                <span>行为策略调整</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #d7191c;"></div>
+                <span>闭合性关系网络</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #1a9641;"></div>
+                <span>连接性社会资本</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #4d4d4d;"></div>
+                <span>核心形成路径</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="border: 1px dashed #1a9641;"></div>
+                <span>反馈强化回路</span>
+            </div>
+        </div>
+        
+        <div class="source">来源：基于社会资本理论与网络治理理论的研究框架设计</div>
+    </div>
+
+    <script>
+        // 初始化图表
+        Plotly.newPlot('framework-chart', getData(), getLayout(), {
+            responsive: true,
+            displayModeBar: false
+        });
+        
+        // 数据配置
+        function getData() {
+            return [
+                // ============= 底层：结构性机会系统供给 =============
+                {
+                    type: 'scatter',
+                    x: [3, 6.5, 10, 13.5],
+                    y: [1.5, 1.5, 1.5, 1.5],
+                    mode: 'text',
+                    text: [
+                        '组织维度<br>社会组织介入 & 社群平台',
+                        '制度维度<br>制度化激励体系',
+                        '空间维度<br>公共空间营造',
+                        '文化维度<br>公共参与价值引导'
+                    ],
+                    textfont: {
+                        size: 14,
+                        color: '#ffffff',
+                        family: 'Arial'
+                    },
+                    hoverinfo: 'text',
+                    textposition: 'middle center',
+                    showlegend: false
+                },
+                {
+                    type: 'scatter',
+                    x: [3, 6.5, 10, 13.5],
+                    y: [1.5, 1.5, 1.5, 1.5],
+                    mode: 'markers',
+                    marker: {
+                        size: [120, 120, 120, 120],
+                        sizemode: 'diameter',
+                        color: 'rgba(44, 123, 182, 0.5)',
+                        line: {
+                            width: 2,
+                            color: '#2c7bb6'
+                        }
+                    },
+                    hoverinfo: 'none',
+                    showlegend: false
+                },
+                {
+                    type: 'scatter',
+                    x: [8],
+                    y: [0.8],
+                    mode: 'text',
+                    text: ['结构性机会的系统供给'],
+                    textfont: {
+                        size: 16,
+                        color: '#2c7bb6',
+                        weight: 'bold'
+                    },
+                    hoverinfo: 'none',
+                    showlegend: false
+                },
+                
+                // ============= 中层：行为策略调整 =============
+                {
+                    type: 'scatter',
+                    x: [8],
+                    y: [4],
+                    mode: 'text',
+                    text: ['机会识别与行为策略调整'],
+                    textfont: {
+                        size: 15,
+                        color: '#ffffff',
+                        weight: 'bold'
+                    },
+                    hoverinfo: 'text',
+                    showlegend: false
+                },
+                {
+                    type: 'scatter',
+                    x: [8],
+                    y: [4],
+                    mode: 'markers',
+                    marker: {
+                        size: [140],
+                        sizemode: 'diameter',
+                        symbol: 'circle',
+                        color: 'rgba(253, 174, 97, 0.5)',
+                        line: {
+                            width: 3,
+                            color: '#fdae61'
+                        }
+                    },
+                    hoverinfo: 'none',
+                    showlegend: false
+                },
+                {
+                    type: 'scatter',
+                    x: [7, 8, 9],
+                    y: [3.6, 4.3, 3.7],
+                    mode: 'text',
+                    text: ['机会信息<br>多渠道传播', '理性驱动<br>策略调整', '参与路径<br>多元化设计'],
+                    textfont: {
+                        size: 12,
+                        color: '#222222'
+                    },
+                    hoverinfo: 'text',
+                    showlegend: false
+                },
+                
+                // ============= 上层：闭合性关系网络 =============
+                {
+                    type: 'scatter',
+                    x: [4],
+                    y: [7.5],
+                    mode: 'text',
+                    text: ['闭合性关系网络形成'],
+                    textfont: {
+                        size: 15,
+                        color: '#ffffff',
+                        weight: 'bold'
+                    },
+                    hoverinfo: 'text',
+                    showlegend: false
+                },
+                {
+                    type: 'scatter',
+                    x: [4],
+                    y: [7.5],
+                    mode: 'markers',
+                    marker: {
+                        size: [100],
+                        sizemode: 'diameter',
+                        symbol: 'circle',
+                        color: 'rgba(215, 25, 28, 0.4)',
+                        line: {
+                            width: 2,
+                            color: '#d7191c'
+                        }
+                    },
+                    hoverinfo: 'none',
+                    showlegend: false
+                },
+                {
+                    type: 'scatter',
+                    x: [3.5, 4, 4.5],
+                    y: [7.8, 7.4, 7.8],
+                    mode: 'text',
+                    text: ['高频互动', '规范约束', '互惠萌芽'],
+                    textfont: {
+                        size: 12,
+                        color: '#222222'
+                    },
+                    hoverinfo: 'text',
+                    showlegend: false
+                },
+                
+                // ============= 上层：连接性社会资本 =============
+                {
+                    type: 'scatter',
+                    x: [12],
+                    y: [7.5],
+                    mode: 'text',
+                    text: ['连接性社会资本形成'],
+                    textfont: {
+                        size: 15,
+                        color: '#ffffff',
+                        weight: 'bold'
+                    },
+                    hoverinfo: 'text',
+                    showlegend: false
+                },
+                {
+                    type: 'scatter',
+                    x: [12],
+                    y: [7.5],
+                    mode: 'markers',
+                    marker: {
+                        size: [120],
+                        sizemode: 'diameter',
+                        symbol: 'circle',
+                        color: 'rgba(26, 150, 65, 0.3)',
+                        line: {
+                            width: 2,
+                            color: '#1a9641'
+                        }
+                    },
+                    hoverinfo: 'none',
+                    showlegend: false
+                },
+                {
+                    type: 'scatter',
+                    x: [11.5, 12, 12.5],
+                    y: [7.8, 7.4, 7.8],
+                    mode: 'text',
+                    text: ['弱关系拓展', '互惠常态化', '集体认同'],
+                    textfont: {
+                        size: 12,
+                        color: '#222222'
+                    },
+                    hoverinfo: 'text',
+                    showlegend: false
+                },
+                {
+                    type: 'scatter',
+                    x: [12],
+                    y: [6],
+                    mode: 'text',
+                    text: ['社区集体认同'],
+                    textfont: {
+                        size: 13,
+                        color: '#1a9641'
+                    },
+                    hoverinfo: 'text',
+                    showlegend: false
+                },
+                
+                // ============= 关系箭头 =============
+                // 从结构层到行为层
+                {
+                    type: 'scatter',
+                    x: [3, 6.5, 10, 13.5],
+                    y: [2.2, 2.2, 2.2, 2.2],
+                    mode: 'lines',
+                    line: {
+                        width: 2,
+                        color: '#4d4d4d'
+                    },
+                    hoverinfo: 'none',
+                    showlegend: false
+                },
+                {
+                    type: 'scatter',
+                    x: [3, 3, 6.5, 6.5, 10, 10, 13.5, 13.5],
+                    y: [2.2, 3.3, 2.2, 3.3, 2.2, 3.3, 2.2, 3.3],
+                    mode: 'lines',
+                    line: {
+                        width: 2,
+                        color: '#4d4d4d'
+                    },
+                    hoverinfo: 'none',
+                    showlegend: false
+                },
+                // 从行为层到闭合网络
+                {
+                    type: 'scatter',
+                    x: [7.2, 4.8],
+                    y: [4.7, 6.8],
+                    mode: 'lines',
+                    line: {
+                        width: 2.5,
+                        color: '#4d4d4d'
+                    },
+                    hoverinfo: 'none',
+                    showlegend: false
+                },
+                // 从闭合网络到社会资本
+                {
+                    type: 'scatter',
+                    x: [4.8, 11.2],
+                    y: [7.5, 7.5],
+                    mode: 'lines',
+                    line: {
+                        width: 2.5,
+                        color: '#4d4d4d'
+                    },
+                    hoverinfo: 'none',
+                    showlegend: false
+                },
+                // 反馈回路
+                {
+                    type: 'scatter',
+                    x: [12, 13, 13, 8],
+                    y: [6.8, 6, 2.5, 2.5],
+                    mode: 'lines',
+                    line: {
+                        width: 2,
+                        color: '#1a9641',
+                        dash: 'dash'
+                    },
+                    hoverinfo: 'none',
+                    showlegend: false
+                }
+            ];
+        }
+        
+        // 布局配置
+        function getLayout() {
+            return {
+                xaxis: {
+                    showgrid: false,
+                    zeroline: false,
+                    showticklabels: false,
+                    range: [0, 16]
+                },
+                yaxis: {
+                    showgrid: false,
+                    zeroline: false,
+                    showticklabels: false,
+                    range: [0, 10]
+                },
+                margin: {t: 30, b: 30, l: 30, r: 30},
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                shapes: [
+                    // 箭头头部
+                    createArrow(3, 3.3, 0, -1, '#4d4d4d'),
+                    createArrow(6.5, 3.3, 0, -1, '#4d4d4d'),
+                    createArrow(10, 3.3, 0, -1, '#4d4d4d'),
+                    createArrow(13.5, 3.3, 0, -1, '#4d4d4d'),
+                    createArrow(4.8, 7.5, -1, 0, '#4d4d4d'),
+                    createArrow(11.2, 7.5, 1, 0, '#4d4d4d'),
+                    createArrow(8, 2.5, 0, 1, '#1a9641')
+                ],
+                annotations: [
+                    // 路径标注
+                    createAnnotation(5.5, 6.5, '行为策略调整', 0),
+                    createAnnotation(8, 8.2, '关系网络演化', 0),
+                    createAnnotation(12.5, 5.5, '社会资本反哺', -45)
+                ]
+            };
+        }
+        
+        // 创建箭头形状
+        function createArrow(x, y, dx, dy, color) {
+            return {
+                type: 'path',
+                path: `M ${x},${y} L ${x - dx*0.5 - dy*0.3},${y - dy*0.5 + dx*0.3} L ${x - dx*0.5 + dy*0.3},${y - dy*0.5 - dx*0.3} Z`,
+                fillcolor: color,
+                line: {color: color}
+            };
+        }
+        
+        // 创建路径标注
+        function createAnnotation(x, y, text, angle) {
+            return {
+                x: x,
+                y: y,
+                text: text,
+                showarrow: false,
+                font: {
+                    size: 13,
+                    color: '#4d4d4d'
+                },
+                textangle: angle,
+                bordercolor: '#cccccc',
+                borderpad: 4,
+                bgcolor: 'rgba(255, 255, 255, 0.7)'
+            };
+        }
+    </script>
+</body>
+</html>
